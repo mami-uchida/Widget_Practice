@@ -1,95 +1,93 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(primarySwatch: Colors.blueGrey),
       home: Scaffold(
         body: Column(
           children: <Widget>[
             Container(
-              width: double.infinity,
-              height: 60,
-              color: Colors.grey[200],
-              child: Row(
-                // 横に並べる
-                children: <Widget>[
-                  Container(color: Colors.pink, child: Text('first')),
-                  Container(color: Colors.lightBlue, child: Text('second')),
-                  Container(color: Colors.yellow, child: Text('third')),
-                ],
-              ),
+              padding: const EdgeInsets.only(top: 32),
+              child: const Text('TextButton'),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                const TextButton(
+                  onPressed: null,
+                  child: Text('disabled'),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: const Text('enabled'),
+                ),
+                TextButton(
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.orange,
+                  ),
+                  onPressed: () {},
+                  child: const Text('enabled'),
+                ),
+              ],
             ),
             Container(
-              width: double.infinity,
-              height: 60,
-              child: Row(
-                // 中央寄せ
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Container(color: Colors.pink, child: Text('***')),
-                  Container(color: Colors.lightBlue, child: Text('中央寄せ')),
-                  Container(color: Colors.yellow, child: Text('---')),
-                ],
-              ),
+              padding: const EdgeInsets.only(top: 90),
+              child: const Text('OutlinedButton'),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                const OutlinedButton(
+                  onPressed: null,
+                  child: Text('disabled'),
+                ),
+                OutlinedButton(
+                  onPressed: () {},
+                  child: const Text('enabled'),
+                ),
+                OutlinedButton(
+                  onPressed: () {},
+                  style: OutlinedButton.styleFrom(
+                    foregroundColor: Colors.orange,
+                  ),
+                  child: const Text('enabled'),
+                ),
+              ],
             ),
             Container(
-              width: double.infinity,
-              height: 60,
-              color: Colors.grey[200],
-              child: Row(
-                // 右寄せ
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  Container(color: Colors.pink, child: Text('***')),
-                  Container(color: Colors.lightBlue, child: Text('右寄せ')),
-                  Container(color: Colors.yellow, child: Text('---')),
-                ],
-              ),
+              padding: const EdgeInsets.only(top: 90),
+              child: const Text('ElevatedButton'),
             ),
-            Container(
-              width: double.infinity,
-              height: 60,
-              child: Row(
-                // 均等配置
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Container(color: Colors.pink, child: Text('***')),
-                  Container(color: Colors.lightBlue, child: Text('均等配置')),
-                  Container(color: Colors.yellow, child: Text('---')),
-                ],
-              ),
-            ),
-            Container(
-              width: double.infinity,
-              height: 60,
-              color: Colors.grey[200],
-              child: Row(
-                // 上寄せ
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Container(color: Colors.pink, child: Text('***')),
-                  Container(color: Colors.lightBlue, child: Text('上寄せ')),
-                  Container(color: Colors.yellow, child: Text('---')),
-                ],
-              ),
-            ),
-            Container(
-              width: double.infinity,
-              height: 60,
-              child: Row(
-                // 下寄せ
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: <Widget>[
-                  Container(color: Colors.pink, child: Text('===')),
-                  Container(color: Colors.lightBlue, child: Text('下寄せ')),
-                  Container(color: Colors.yellow, child: Text('***')),
-                ],
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                const ElevatedButton(
+                  onPressed: null,
+                  child: Text('disabled'),
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    elevation: 7,
+                  ),
+                  child: const Text('enabled'),
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.orange,
+                    elevation: 12,
+                  ),
+                  child: const Text('enabled'),
+                ),
+              ],
             ),
           ],
         ),

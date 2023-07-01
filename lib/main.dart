@@ -10,32 +10,22 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Column(
-          children: <Widget>[
-            // タイトル・サブタイトル・画像・アイコン等を含めたアイテムが作れる
-            ListTile(
-              leading: Image.network('https://placehold.jp/50x50.png'),
-              title: const Text('ListTile'),
-              subtitle: const Text('subtitle'),
-              trailing: const Icon(Icons.more_vert),
+        appBar: AppBar(
+          // 左側のアイコン
+          leading: const Icon(Icons.arrow_back),
+          // タイトルテキスト
+          title: const Text('Hello'),
+          // 右側のアイコン一覧
+          actions: <Widget>[
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.access_alarm),
             ),
-            // 影のついたカードUIが作れる
-            Card(
-              child: Container(
-                height: 60,
-                width: double.infinity,
-                child: const Text('Card'),
-              ),
-            ),
-            // 組み合わせることもOK
-            Card(
-              child: ListTile(
-                leading: Image.network('https://placehold.jp/50x50.png'),
-                title: const Text('Card and ListTile'),
-                subtitle: const Text('subtitle'),
-                trailing: const Icon(Icons.more_vert),
-              ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.more_rounded),
             ),
           ],
         ),

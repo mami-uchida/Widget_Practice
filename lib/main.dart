@@ -34,6 +34,7 @@ class MyWidget extends StatefulWidget {
 class _MyWidgetState extends State<MyWidget> {
   // データを宣言
   int count = 0;
+  int count2 = 10;
 
   // データを元にWidgetを作る
   @override
@@ -51,6 +52,17 @@ class _MyWidgetState extends State<MyWidget> {
             });
           },
           child: const Text('カウントアップ'),
+        ),
+        Text(count2.toString()),
+        TextButton(
+          onPressed: () {
+            setState(() {
+              if (count2 > 0) {
+                count2--;
+              }
+            });
+          },
+           child: const Text('カウンドダウン'),
         ),
       ],
     );
